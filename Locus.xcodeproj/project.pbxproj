@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		557C6A351DB562F1007ED9CE /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C6A341DB562F1007ED9CE /* LocationSearchTable.swift */; };
 		55EBA3C11DAD611000D4F806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBA3C01DAD611000D4F806 /* AppDelegate.swift */; };
-		55EBA3C31DAD611000D4F806 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBA3C21DAD611000D4F806 /* FirstViewController.swift */; };
 		55EBA3C51DAD611000D4F806 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBA3C41DAD611000D4F806 /* SecondViewController.swift */; };
 		55EBA3C81DAD611000D4F806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55EBA3C61DAD611000D4F806 /* Main.storyboard */; };
 		55EBA3CA1DAD611000D4F806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55EBA3C91DAD611000D4F806 /* Assets.xcassets */; };
@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		557C6A341DB562F1007ED9CE /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		55EBA3BD1DAD611000D4F806 /* Locus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Locus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55EBA3C01DAD611000D4F806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55EBA3C21DAD611000D4F806 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				55EBA3C01DAD611000D4F806 /* AppDelegate.swift */,
+				557C6A341DB562F1007ED9CE /* LocationSearchTable.swift */,
 				55EBA3C21DAD611000D4F806 /* FirstViewController.swift */,
 				55EBA3C41DAD611000D4F806 /* SecondViewController.swift */,
 				55EBA3C61DAD611000D4F806 /* Main.storyboard */,
@@ -99,6 +101,7 @@
 				TargetAttributes = {
 					55EBA3BC1DAD611000D4F806 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = XGRPCUVLML;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -139,9 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				557C6A351DB562F1007ED9CE /* LocationSearchTable.swift in Sources */,
 				55EBA3C51DAD611000D4F806 /* SecondViewController.swift in Sources */,
 				55EBA3C11DAD611000D4F806 /* AppDelegate.swift in Sources */,
-				55EBA3C31DAD611000D4F806 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +267,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XGRPCUVLML;
 				INFOPLIST_FILE = Locus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EK.Locus;
@@ -276,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XGRPCUVLML;
 				INFOPLIST_FILE = Locus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EK.Locus;
@@ -303,6 +308,7 @@
 				55EBA3D31DAD611000D4F806 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
