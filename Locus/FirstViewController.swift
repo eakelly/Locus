@@ -15,16 +15,15 @@ protocol HandleMapSearch {
 }
 
 class FirstViewController: UIViewController, CLLocationManagerDelegate {
-    
+
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
-    
+
     var resultSearchController:UISearchController? = nil
     
     var selectedPin:MKPlacemark? = nil
     
-    @IBOutlet weak var logoutButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +52,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         
         locationSearchTable.handleMapSearchDelegate = self
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -73,7 +72,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Errors: " + error.localizedDescription)
     }//end func
-    
+
     func writeEntry() {
         if let selectedPin = selectedPin {
             let mapItem = MKMapItem(placemark: selectedPin)

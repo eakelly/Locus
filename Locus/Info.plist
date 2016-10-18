@@ -3,9 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>&quot;Locus&quot; requests access to your current location.</string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
+	<string>Locus requests to use your location</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
