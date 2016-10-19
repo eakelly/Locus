@@ -48,6 +48,7 @@
                     <navigationItem key="navigationItem" id="Sdr-lm-OLe"/>
                     <connections>
                         <outlet property="mapView" destination="Yor-ji-L9z" id="hyx-8M-hN1"/>
+                        <segue destination="vmp-YN-ye2" kind="show" identifier="MakePost" id="PMi-Nf-6jG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -67,18 +68,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y0g-jj-HWK" id="l28-tT-HAl">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="isu-bN-rK9">
-                                            <frame key="frameInset" minX="15" minY="4" width="34" height="21"/>
+                                            <frame key="frameInset" minX="15" minY="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i17-uM-URq">
-                                            <frame key="frameInset" minX="15" minY="25" width="44" height="15"/>
+                                            <frame key="frameInset" minX="15" minY="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -158,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1336.5" y="358.5"/>
+            <point key="canvasLocation" x="1335" y="385"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -197,6 +198,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDW-C7-V2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="575" y="-986"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="j9x-we-Rag">
+            <objects>
+                <viewController storyboardIdentifier="entryPost" id="vmp-YN-ye2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l1G-Sk-RGA"/>
+                        <viewControllerLayoutGuide type="bottom" id="WBb-97-9ml"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="raZ-ps-s2w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jOZ-3O-A7k">
+                                <frame key="frameInset" minY="623" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="TVq-62-0TI"/>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RjA-Zu-Tzu">
+                                <frame key="frameInset" minX="29" minY="98" width="317" height="265"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivX-Ha-hUf">
+                                <frame key="frameInset" minX="29" minY="371" width="37" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.25490196079999999" green="0.20000000000000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8U-KB-lxl">
+                                <frame key="frameInset" minX="275" minY="580" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.25098039220000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.68235294120000001" green="0.7725490196" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="KHM-j9-VUU" id="WcV-dm-biu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UvM-PF-Qy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="KHM-j9-VUU">
+                    <connections>
+                        <outlet property="delegate" destination="vmp-YN-ye2" id="WbM-Ve-gVS"/>
+                        <outlet property="searchContentsController" destination="vmp-YN-ye2" id="Yac-OI-Fyc"/>
+                        <outlet property="searchResultsDataSource" destination="vmp-YN-ye2" id="lBH-0R-ZSa"/>
+                        <outlet property="searchResultsDelegate" destination="vmp-YN-ye2" id="EEy-lU-YxI"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2112.8000000000002" y="-1018.7406296851575"/>
         </scene>
     </scenes>
     <resources>
