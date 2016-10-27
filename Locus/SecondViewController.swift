@@ -8,15 +8,10 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UICollectionViewDelegate {
+class SecondViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
-        
-        collectionView.delegate = self
-        
-        
-        
+    
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }

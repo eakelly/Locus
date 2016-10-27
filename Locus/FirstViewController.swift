@@ -87,6 +87,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
             self.show(entry, sender: entry)
         //}
     }//end func
+    
 }//end class
 
 extension FirstViewController: HandleMapSearch {
