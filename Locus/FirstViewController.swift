@@ -27,6 +27,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
+
         mapView.delegate = self
         
         self.locationManager.delegate = self
@@ -51,13 +53,14 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         locationSearchTable.mapView = mapView
         
         locationSearchTable.handleMapSearchDelegate = self
-    }
+        
+
+    }//end viewDidLoad()
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]) {
@@ -127,3 +130,19 @@ extension FirstViewController : MKMapViewDelegate {
         return pinView
     }
 }//end extension
+
+
+extension UIViewController {
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        tap.cancelsTouchesInView = false
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+        //view.resignFirstResponder()
+    }
+}
+
