@@ -111,13 +111,15 @@ class NotesListTableViewController: UITableViewController {
             var selectedIndexPath = tableView.indexPathForSelectedRow
             // Pass the selected object to the new view controller.
             noteDetailViewController.note = notes[selectedIndexPath!.row]
+            noteDetailViewController.title = "Create an Entry"
         }
-        
+            
         else if segue.identifier! == "addNote" {
             let note = Note()
             notes.append(note)
             let noteDetailViewController = segue.destination as! NoteDetailViewController
             noteDetailViewController.note = note
+            noteDetailViewController.title = "Create an Entry"
         }
     }
  

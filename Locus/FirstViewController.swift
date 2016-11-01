@@ -81,10 +81,13 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
             //let mapItem = MKMapItem(placemark: selectedPin)
             //let entry = self.storyboard!.instantiateViewController(withIdentifier: "entryPost")
 
-            let entry = storyboard!.instantiateViewController(withIdentifier: "entryPost")
-            entry.title = "Create an Entry"
+        let entry = storyboard!.instantiateViewController(withIdentifier: "entryPost")
+        entry.title = "Create an Entry"
+        self.show(entry, sender: entry)
 
-            self.show(entry, sender: entry)
+        //let noteDetailViewController:NoteDetailViewController = NoteDetailViewController()
+        //self.present(noteDetailViewController, animated: true, completion: nil)
+        //noteDetailViewController.title = "Create an Entry"
         //}
     }//end func
     
