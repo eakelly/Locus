@@ -8,13 +8,14 @@
 
 import UIKit
 import MapKit
+import KCFloatingActionButton
 
 //declares custom protocol
 protocol HandleMapSearch {
     func dropPinZoomIn(placeMark:MKPlacemark)
 }
 
-class FirstViewController: UIViewController, CLLocationManagerDelegate {
+class FirstViewController: UIViewController, CLLocationManagerDelegate, KCFloatingActionButtonDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -24,11 +25,13 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     var selectedPin:MKPlacemark? = nil
     
+    var fab = KCFloatingActionButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.hideKeyboardWhenTappedAround()
-
+        layoutFAB()
+        
         mapView.delegate = self
         
         self.locationManager.delegate = self
@@ -91,6 +94,78 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         //}
     }//end func
     
+    @IBAction func endEditing() {
+        view.endEditing(true)
+    }
+    
+    @IBAction func customImageSwitched(_ sender: UISwitch) {
+        if sender.isOn == true {
+            fab.buttonImage = UIImage(named: "custom-add")
+        } else {
+            fab.buttonImage = nil
+        }
+    }
+    
+    func layoutFAB() {
+        let item = KCFloatingActionButtonItem()
+        item.buttonColor = UIColor.blue
+        item.circleShadowColor = UIColor.red
+        item.titleShadowColor = UIColor.blue
+        item.title = "Menu"
+        item.handler = { item in }
+        
+        let fab = KCFloatingActionButton()
+        // 1
+        fab.addItem("View Map", icon: UIImage(named: "map")!, handler: { item in
+            let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "mapView") as! FirstViewController
+            newVC.navigationController?.pushViewController(newVC, animated:true)
+            self.navigationController?.pushViewController(newVC, animated:true)
+            fab.close()
+        })
+        self.view.addSubview(fab)
+        // 2
+        fab.addItem("Create a memory", icon: UIImage(named: "pencil")!, handler: { item in
+            let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "entryPost") as! SecondViewController
+            newVC.navigationController?.pushViewController(newVC, animated:true)
+            self.navigationController?.pushViewController(newVC, animated:true)
+            fab.close()
+        })
+        self.view.addSubview(fab)
+        // 3
+        
+        fab.addItem("View Memories", icon: UIImage(named: "memories")!, handler: { item in
+            let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "listView") as! NotesListTableViewController
+            newVC.navigationController?.pushViewController(newVC, animated:true)
+            self.navigationController?.pushViewController(newVC, animated:true)
+            fab.close()
+        })
+        self.view.addSubview(fab)
+ 
+        // 4
+        fab.addItem("Account", icon: UIImage(named: "account")!, handler: { item in
+            let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "account") as! AccountViewController
+            newVC.navigationController?.pushViewController(newVC, animated:true)
+            self.navigationController?.pushViewController(newVC, animated:true)
+            fab.close()
+        })
+        self.view.addSubview(fab)
+        //5
+        fab.addItem("Logout?", icon: UIImage(named: "logout")!, handler: { item in
+            let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "login") as! LoginViewController
+            newVC.navigationController?.pushViewController(newVC, animated:true)
+            self.navigationController?.pushViewController(newVC, animated:true)
+            fab.close()
+        })
+        self.view.addSubview(fab)
+    }
+    
+    func KCFABOpened(_ fab: KCFloatingActionButton) {
+        print("FAB Opened")
+    }
+    
+    func KCFABClosed(_ fab: KCFloatingActionButton) {
+        print("FAB Closed")
+    }
 }//end class
 
 extension FirstViewController: HandleMapSearch {
